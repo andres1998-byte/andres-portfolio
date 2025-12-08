@@ -104,7 +104,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="relative hidden flex-1 items-center justify-center md:flex"
+          className="relative flex-1 items-center justify-center md:flex md:items-center md:justify-center"
         >
           <div
   className="
