@@ -213,55 +213,59 @@ export default function Navbar() {
         )}
       </motion.header>
 
-      {/* FLOATING SHOW/HIDE BUTTON WITH TOOLTIP */}
-<motion.div
-  className="fixed bottom-5 right-5 z-[999] flex flex-col items-center"
-  onMouseEnter={() => setHovered(true)}
-  onMouseLeave={() => setHovered(false)}
->
-  {/* Tooltip */}
-  {hovered && (
-    <motion.div
-      initial={{ opacity: 0, y: 6 }}
+      {/* FLOATING SHOW/HIDE BUTTON WITH FIXED TOOLTIP */}
+<div className="fixed bottom-5 right-5 z-[999]">
+  <div className="relative flex items-center justify-center">
+
+    {/* Tooltip (absolute, does NOT shift layout) */}
+    {hovered && (
+      <motion.div
+        initial={{ opacity: 0, y: 6 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 6 }}
+        transition={{ duration: 0.22, ease: "easeOut" }}
+        className="
+  absolute -top-10 left-1/2 -translate-x-[70%]
+  px-3 py-1 rounded-md text-xs font-medium
+  bg-slate-800 text-slate-100 shadow-lg
+  dark:bg-slate-200 dark:text-slate-900
+  border border-slate-700/30 dark:border-slate-300/30
+  whitespace-nowrap
+"
+
+      >
+        {isHidden ? "Show Navbar" : "Hide Navbar"}
+      </motion.div>
+    )}
+
+    {/* Button */}
+    <motion.button
+      onClick={() => setIsHidden((v) => !v)}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 6 }}
-      transition={{ duration: 0.22, ease: "easeOut" }}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      transition={{ duration: 0.3 }}
       className="
-        mb-2 px-3 py-1 rounded-md text-xs font-medium
-        bg-slate-800 text-slate-100 shadow-lg 
-        dark:bg-slate-200 dark:text-slate-900
-        border border-slate-700/30 dark:border-slate-300/30
-        whitespace-nowrap
+        h-11 w-11 rounded-full 
+        bg-slate-200 dark:bg-slate-800 
+        shadow-lg shadow-slate-400/30 dark:shadow-slate-900/40
+        backdrop-blur-md 
+        flex items-center justify-center
+        border border-slate-300/40 dark:border-slate-700/40
       "
     >
-      {isHidden ? "Show Navbar" : "Hide Navbar"}
-    </motion.div>
-  )}
+      {isHidden ? (
+        <span className="text-slate-700 dark:text-slate-200 text-xl">▼</span>
+      ) : (
+        <span className="text-slate-700 dark:text-slate-200 text-xl">▲</span>
+      )}
+    </motion.button>
+  </div>
+</div>
 
-  {/* Button */}
-  <motion.button
-    onClick={() => setIsHidden((v) => !v)}
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.9 }}
-    transition={{ duration: 0.3 }}
-    className="
-      h-11 w-11 rounded-full 
-      bg-slate-200 dark:bg-slate-800 
-      shadow-lg shadow-slate-400/30 dark:shadow-slate-900/40
-      backdrop-blur-md 
-      flex items-center justify-center
-      border border-slate-300/40 dark:border-slate-700/40
-    "
-  >
-    {isHidden ? (
-      <span className="text-slate-700 dark:text-slate-200 text-xl">▼</span>
-    ) : (
-      <span className="text-slate-700 dark:text-slate-200 text-xl">▲</span>
-    )}
-  </motion.button>
-</motion.div>
 
     </>
   );
