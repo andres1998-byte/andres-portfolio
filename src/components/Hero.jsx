@@ -1,5 +1,7 @@
 // src/components/Hero.jsx
 import { motion } from "framer-motion";
+import profileImg from "../assets/Andres.jpeg";
+
 
 export default function Hero() {
   return (
@@ -114,7 +116,7 @@ export default function Hero() {
   "
 >
   <img
-    src="/src/assets/Andres.jpeg"
+    src={profileImg}
     alt="Andrés Villarreal"
     className="
       h-64 w-64 rounded-3xl object-cover 
