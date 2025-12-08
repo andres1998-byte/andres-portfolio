@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+}
+
+/* Let the app stretch full height */
+html,
+body,
+#root {
+  height: 100%;
+}
+
+::selection {
+  background-color: rgb(56 189 248 / 0.3); /* sky-400/30 */
+}
