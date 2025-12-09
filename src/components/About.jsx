@@ -7,7 +7,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="scroll-mt-24 space-y-10">
+    <section id="about" className="scroll-mt-24 pb-10 space-y-16">
 
       {/* TITLE + DOWNLOAD CV BUTTON */}
       <div className="flex items-center justify-between">
@@ -38,13 +38,13 @@ export default function About() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.05, duration: 0.5 }}
-        className="mt-4 space-y-4 text-sm leading-relaxed 
-                   text-slate-600 dark:text-slate-300"
+        className="mb-25 space-y-5 text-[15px] leading-relaxed 
+                   text-slate-700 dark:text-slate-300"
       >
         <p>
           I&apos;m a software engineer based in Mexico City with a background in 
-          Applied Mathematics (ITAM) and years of experience building backend and 
-          frontend systems for financial companies.
+          Applied Mathematics (ITAM) and years of experience building backend 
+          and frontend systems for major financial companies.
         </p>
 
         <p>
@@ -60,10 +60,7 @@ export default function About() {
         </p>
       </motion.div>
 
-      {/* ───────────────────────────────────────── */}
       {/* RECOMMENDATIONS SECTION */}
-      {/* ───────────────────────────────────────── */}
-
       <motion.h3
         initial={{ opacity: 0, y: 8 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -75,61 +72,63 @@ export default function About() {
         Recommendations
       </motion.h3>
 
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-3 gap-8">
 
-        {/* Amit Yadav */}
-        <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-700 
-                        bg-white/60 dark:bg-slate-800/40 shadow-sm">
-          <p className="text-slate-700 dark:text-slate-300 text-sm italic">
-            “Andres consistently demonstrated exceptional technical capabilities 
-            and a systematic approach to complex back-end problems…”
-          </p>
-          <p className="mt-3 text-xs font-medium text-slate-600 dark:text-slate-400">
-            — Amit Yadav, Lead Business Analyst, T. Rowe Price
-          </p>
-          <button
-            onClick={() => openPDF("/Letter of Recommendation for Andres Villarreal.pdf")}
-            className="mt-3 text-xs text-sky-600 dark:text-sky-400 hover:underline"
-          >
-            View Letter
-          </button>
-        </div>
-
-        {/* Michael Yin */}
-        <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-700 
-                        bg-white/60 dark:bg-slate-800/40 shadow-sm">
-          <p className="text-slate-700 dark:text-slate-300 text-sm italic">
-            “A motivated, intelligent, and dependable engineer who often proposed
-            elegant solutions and exceeded expectations…”
-          </p>
-          <p className="mt-3 text-xs font-medium text-slate-600 dark:text-slate-400">
-            — Xuecheng (Michael) Yin, Tech Lead, T. Rowe Price
-          </p>
-          <button
-            onClick={() => openPDF("/recommendation-letter-Andres.pdf")}
-            className="mt-3 text-xs text-sky-600 dark:text-sky-400 hover:underline"
-          >
-            View Letter
-          </button>
-        </div>
-
-        {/* Luis Estrada */}
-<div className="p-4 rounded-xl border border-slate-200 dark:border-slate-700 
-                bg-white/60 dark:bg-slate-800/40 shadow-sm">
-  <p className="text-slate-700 dark:text-slate-300 text-sm italic">
-    “Andrés demonstrates strong social and professional skills, excels in 
-    communication, and builds positive relationships with clients and teammates.”
-  </p>
-  <p className="mt-3 text-xs font-medium text-slate-600 dark:text-slate-400">
-    — Luis Estrada, Software Engineer, Infosys
-  </p>
-  <button
-    onClick={() => openPDF("/Carta recomendacion Luis Estrada.pdf")}
-    className="mt-3 text-xs text-sky-600 dark:text-sky-400 hover:underline"
+        {/* CARD COMPONENT — reused 3 times */}
+        {[
+  {
+    quote:
+      "Andres consistently demonstrated exceptional technical capabilities and a systematic approach to complex back-end problems…",
+    author: "— Amit Yadav, Lead Business Analyst, T. Rowe Price",
+    file: "/Letter of Recommendation for Andres Villarreal.pdf",
+  },
+  {
+    quote:
+      "A motivated, intelligent, and dependable engineer who often proposed elegant solutions and exceeded expectations…",
+    author: "— Xuecheng (Michael) Yin, Tech Lead, T. Rowe Price",
+    file: "/recommendation-letter-Andres.pdf",
+  },
+  {
+    quote:
+      "Andrés demonstrates strong social and professional skills, excels in communication, and builds positive relationships with clients and teammates.",
+    author: "— Luis Estrada, Software Engineer, Infosys",
+    file: "/Carta recomendacion Luis Estrada.pdf",
+  },
+].map((rec, i) => (
+  <motion.div
+    key={i}
+    onClick={() => openPDF(rec.file)}
+    whileHover={{
+      scale: 1.02,
+      boxShadow: "0 8px 28px rgba(0,0,0,0.18)",
+    }}
+    transition={{ type: "spring", stiffness: 220, damping: 18 }}
+    className="
+      p-7 rounded-2xl border border-slate-200 dark:border-slate-700 
+      bg-white/80 dark:bg-slate-800/40 shadow-sm 
+      backdrop-blur-sm cursor-pointer select-none
+    "
   >
-    View Letter
-  </button>
-</div>
+    <p className="text-slate-700 dark:text-slate-300 text-sm italic leading-relaxed">
+      “{rec.quote}”
+    </p>
+
+    <p className="mt-5 text-xs font-medium text-slate-600 dark:text-slate-400">
+      {rec.author}
+    </p>
+
+    {/* CTA TEXT */}
+    <p
+      className="
+        mt-6 text-[11px] font-medium 
+        text-sky-600 dark:text-sky-400 
+        tracking-wide uppercase
+      "
+    >
+      Click to view letter →
+    </p>
+  </motion.div>
+))}
 
       </div>
     </section>
