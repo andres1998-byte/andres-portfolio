@@ -20,16 +20,17 @@ export default function TechModal({ onClose }) {
         exit={{ opacity: 0, scale: 0.92 }}
         transition={{ duration: 0.22 }}
         className="
-          relative 
-          w-full max-w-5xl 
-          bg-white dark:bg-slate-900 
-          rounded-xl shadow-lg 
-          p-6
-          flex flex-col items-center
-        "
-        style={{
-          maxHeight: "90vh",    // ensure it never overflows screen
-        }}
+    relative 
+    w-full max-w-5xl 
+    bg-white dark:bg-slate-900 
+    rounded-xl shadow-lg 
+    p-6
+    flex flex-col items-center
+  "
+  style={{
+    maxHeight: "90vh",
+    overflow: "hidden",   // prevents spillover
+  }}
       >
         {/* Close Button */}
         <button
@@ -53,14 +54,17 @@ export default function TechModal({ onClose }) {
             - Boxes shrink so everything fits inside modal
         */}
         <div
-          className="
-            grid gap-4 
-            w-full
-          "
-          style={{
-            gridTemplateColumns: "repeat(auto-fill, minmax(130px, 1fr))",
-          }}
-        >
+  className="
+    grid gap-4 
+    w-full 
+    overflow-y-auto
+  "
+  style={{
+    maxHeight: "65vh",    // scroll inside modal
+    gridTemplateColumns: "repeat(auto-fill, minmax(130px, 1fr))",
+  }}
+>
+
           {techBadges.map((tech, i) => (
             <div
               key={i}
