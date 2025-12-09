@@ -38,16 +38,29 @@ export default function Experience() {
 
   {/* BIG logo top-right */}
   {item.logo && (
+  <a
+    href={item.website}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      absolute right-4 top-0 
+      transition-transform duration-200
+      hover:scale-110
+    "
+  >
     <img
       src={item.logo}
       alt={`${item.company} logo`}
       className="
-        absolute right-4 top-0 
         h-14 w-14 object-contain 
         opacity-90 
+        transition-opacity duration-200
+        hover:opacity-100
       "
     />
-  )}
+  </a>
+)}
+
 
   {/* Role */}
   <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">

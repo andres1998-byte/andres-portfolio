@@ -6,11 +6,12 @@ export const experience = [
     role: "Software Engineer",
     period: "Oct 2025 – Present",
     location: "Mexico City · Remote",
+    website: "https://www.goldmansachs.com/",
     logo: "/logos/gs.svg",
     bullets: [
-      "Support the Data Lake platform by analysing ingestion pipelines, validating dataset integrity, and troubleshooting distributed-system issues.",
+      "Support the Data Lake platform by analyzing ingestion pipelines, validating dataset integrity, and troubleshooting distributed-system issues.",
       "Perform diagnostics to identify root causes of failed jobs, verify pipeline logic, and ensure accurate and timely data availability for downstream applications.",
-      "Teach and mentor Infosys candidates preparing for Goldman Sachs interviews, covering Java (streams, lambdas, concurrency, recursion), data structures (heaps, PQs, DFS/BFS), and real debugging techniques including log analysis and tracing NPEs."
+      "Teach and mentor Infosys candidates preparing for Goldman Sachs interviews, covering Java (streams, lambdas, concurrency, recursion), data structures (heaps, PQs, DFS/BFS), and real debugging techniques including log analysis and tracing Null Pointer Exception's."
     ],
   },
   {
@@ -19,6 +20,7 @@ export const experience = [
     role: "Back End Developer",
     period: "Feb 2024 – Oct 2025",
     location: "Mexico City · Remote",
+    website: "https://www.troweprice.com/en/us",
     logo: "/logos/trowe.svg",
     bullets: [
       "Developed and corrected core exhibit logic for investment products — implementing business rules, quarterly date-selection, allocation name mappings, and fund-age validations — fixing translation and data-availability issues affecting information displayed on the public T. Rowe Price website.",
@@ -34,6 +36,7 @@ export const experience = [
     role: "Full Stack Developer",
     period: "Aug 2023 – Feb 2024",
     location: "Mexico City",
+    website: "https://www.softtek.com/",
     logo: "/logos/softtek.svg",
     bullets: [
       "Developed a secure front-end form for authenticated Banamex users to update passwords, including old/new password fields and confirmation logic.",
