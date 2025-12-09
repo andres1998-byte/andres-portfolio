@@ -35,8 +35,8 @@ export const techBadges = [
   { name: "AWS", logo: "/logos/aws.svg" },
 
   // === Testing ===
-  { name: "JUnit", logo: "/logos/junit.svg" },
-  { name: "Mockito", logo: "/logos/mockito.svg" },
+  { name: "JUnit", logo: "/logos/Junit.svg" },
+  { name: "Mockito", logo: "/logos/mockitologo.png" },
 
   // === Essentials ===
   { name: "Git", logo: "/logos/git.svg" },
