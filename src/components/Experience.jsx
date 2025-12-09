@@ -26,40 +26,54 @@ export default function Experience() {
       >
         {experience.map((item, index) => (
           <motion.article
-            key={item.id}
-            initial={{ opacity: 0, x: -12 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.08, duration: 0.4 }}
-            className="relative pl-4"
-          >
-            {/* Timeline dot */}
-            <div className="absolute left-[-0.55rem] top-1 h-2.5 w-2.5 rounded-full bg-sky-500 shadow-[0_0_0_4px_rgba(56,189,248,0.25)]" />
+  key={item.id}
+  initial={{ opacity: 0, x: -12 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: index * 0.08, duration: 0.4 }}
+  className="relative pl-4"
+>
+  {/* Timeline dot */}
+  <div className="absolute left-[-0.55rem] top-1 h-2.5 w-2.5 rounded-full bg-sky-500 shadow-[0_0_0_4px_rgba(56,189,248,0.25)]" />
 
-            {/* Role */}
-            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
-              {item.role}
-            </h3>
+  {/* BIG logo top-right */}
+  {item.logo && (
+    <img
+      src={item.logo}
+      alt={`${item.company} logo`}
+      className="
+        absolute right-4 top-0 
+        h-14 w-14 object-contain 
+        opacity-90 
+      "
+    />
+  )}
 
-            {/* Company + location */}
-            <p className="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">
-              {item.company} · {item.location}
-            </p>
+  {/* Role */}
+  <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+    {item.role}
+  </h3>
 
-            {/* Period */}
-            <p className="mt-0.5 text-xs text-slate-400 dark:text-slate-500">
-              {item.period}
-            </p>
+  {/* Company + location */}
+  <p className="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">
+    {item.company} · {item.location}
+  </p>
 
-            {/* Bullet points */}
-            <ul className="mt-3 space-y-1.5 text-sm text-slate-600 dark:text-slate-300">
-              {item.bullets.map((line) => (
-                <li key={line} className="leading-relaxed">
-                  • {line}
-                </li>
-              ))}
-            </ul>
-          </motion.article>
+  {/* Period */}
+  <p className="mt-0.5 text-xs text-slate-400 dark:text-slate-500">
+    {item.period}
+  </p>
+
+  {/* Bullet points */}
+  <ul className="mt-3 space-y-1.5 text-sm text-slate-600 dark:text-slate-300">
+    {item.bullets.map((line) => (
+      <li key={line} className="leading-relaxed">
+        • {line}
+      </li>
+    ))}
+  </ul>
+</motion.article>
+
         ))}
       </div>
     </section>
