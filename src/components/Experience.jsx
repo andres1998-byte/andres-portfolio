@@ -36,14 +36,15 @@ export default function Experience() {
   {/* Timeline dot */}
   <div className="absolute left-[-0.55rem] top-1 h-2.5 w-2.5 rounded-full bg-sky-500 shadow-[0_0_0_4px_rgba(56,189,248,0.25)]" />
 
-  {/* BIG logo top-right */}
-  {item.logo && (
+  {/* BIG logo (desktop only) */}
+{item.logo && (
   <a
     href={item.website}
     target="_blank"
     rel="noopener noreferrer"
     className="
       absolute right-4 top-0 
+      hidden sm:block
       transition-transform duration-200
       hover:scale-110
     "
@@ -57,6 +58,22 @@ export default function Experience() {
         transition-opacity duration-200
         hover:opacity-100
       "
+    />
+  </a>
+)}
+
+{/* Small logo (mobile only) */}
+{item.logo && (
+  <a
+    href={item.website}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mb-2 inline-block sm:hidden"
+  >
+    <img
+      src={item.logo}
+      alt={`${item.company} logo`}
+      className="h-8 w-8 object-contain opacity-80"
     />
   </a>
 )}

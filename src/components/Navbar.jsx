@@ -5,7 +5,7 @@ import { useTheme } from "../context/ThemeContext";
 import { motion } from "framer-motion";
 
 const navItems = [
-  { id: "about", label: "About" },
+  { id: "about", label: "About & Recommendations"},
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
