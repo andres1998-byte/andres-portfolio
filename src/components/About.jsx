@@ -23,7 +23,7 @@ export default function About() {
         </motion.h2>
 
         <a
-          href="/Andres Villarreal Reyes Curriculum English.pdf"
+          href="/Andres_Villarreal_Curriculum_English.pdf"
           download
           className="px-4 py-1.5 rounded-full text-xs font-medium
                      bg-sky-600 text-white shadow hover:bg-sky-700 transition"
