@@ -1,13 +1,13 @@
 // src/data/projects.js
 export const projects = [
   {
-    id: "ecommerce",
-    name: "Full-Scale E-commerce Platform",
-    description:
-      "A fully functional e-commerce app with product catalog, cart, checkout, authentication and admin tools, built to showcase full-stack capabilities rather than just a toy demo.",
-    tech: ["Java", "Spring Boot", "React", "PostgreSQL", "Tailwind"],
-    link: "#", // replace with real link
-  },
+  id: "ai-study-tool",
+  name: "AI Interview Study Tool",
+  description:
+    "A full-stack AI-powered app that generates personalized study material and simulates technical interviews. Users pick a topic and level, receive concise study content, then move into an interview flow ending with a coding challenge — all powered by an LLM backend.",
+  tech: ["React", "Spring Boot", "Tailwind", "AI/LLM"],
+  link: "https://aistudytoolandres.netlify.app",
+},
   {
     id: "holdings",
     name: "Investment Data Exhibits",

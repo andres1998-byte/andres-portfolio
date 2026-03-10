@@ -23,7 +23,7 @@ export default function About() {
         </motion.h2>
 
         <a
-          href="/Andres Villarreal Reyes CV English.pdf"
+          href="/Andres Villarreal Reyes Curriculum English.pdf"
           download
           className="px-4 py-1.5 rounded-full text-xs font-medium
                      bg-sky-600 text-white shadow hover:bg-sky-700 transition"
@@ -49,9 +49,7 @@ export default function About() {
 
         <p>
           I previously worked on Java/Spring Boot services, Angular & React apps, 
-          and large-scale data APIs at T. Rowe Price. I now support the Goldman Sachs 
-          Data Lake as an L3 engineer, debugging ingestion issues, validating data 
-          quality, and keeping pipelines healthy.
+          and large-scale data APIs at T. Rowe Price. I currently work as a software engineer at Goldman Sachs, developing backend tooling for the Data Lake platform, resolving distributed system issues, and contributing to pipeline infrastructure used by downstream Java applications
         </p>
 
         <p>

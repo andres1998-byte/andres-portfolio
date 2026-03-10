@@ -2,21 +2,21 @@
 export const experience = [
   {
     id: "gs",
-    company: "Goldman Sachs (via Infosys)",
+    company: "Goldman Sachs",
     role: "Software Engineer",
     period: "Oct 2025 – Present",
     location: "Mexico City · Remote",
     website: "https://www.goldmansachs.com/",
     logo: "/logos/gs.svg",
     bullets: [
-      "Support the Data Lake platform by analyzing ingestion pipelines, validating dataset integrity, and troubleshooting distributed-system issues.",
-      "Perform diagnostics to identify root causes of failed jobs, verify pipeline logic, and ensure accurate and timely data availability for downstream applications.",
-      "Teach and mentor Infosys candidates preparing for Goldman Sachs interviews, covering Java (streams, lambdas, concurrency, recursion), data structures (heaps, PQs, DFS/BFS), and real debugging techniques including log analysis and tracing Null Pointer Exception's."
+      "Developed backend tooling to analyze and validate data ingestion pipelines on the Goldman Sachs Data Lake platform, writing diagnostic queries and tracing failures across distributed systems to ensure accurate, timely data availability for downstream Java-based applications.",
+      "Investigated and resolved production issues across microservice boundaries by analyzing logs, tracing root causes, and contributing code-level fixes aligned with platform architecture and Java best practices.",
+      "Delivered daily technical training sessions on core Java (streams, lambdas, recursion, concurrency), data structures & algorithms (heaps, priority queues, DFS/BFS), and practical debugging techniques including log tracing and exception analysis."
     ],
   },
   {
     id: "trp",
-    company: "T. Rowe Price (via Infosys)",
+    company: "T. Rowe Price",
     role: "Back End Developer",
     period: "Feb 2024 – Oct 2025",
     location: "Mexico City · Remote",
